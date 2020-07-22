@@ -4,7 +4,7 @@ import Nav from "./components/Nav";
 
 function App() {
     return (
-        <div className="h-screen w-full flex overflow-hidden select-none">
+        <div className="h-screen w-full flex overflow-hidden">
             <Nav/>
             <main
                 className="my-1 pt-2 pb-2 px-10 flex-1 bg-gray-200 dark:bg-black rounded-l-lg
