@@ -1,14 +1,54 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import {render} from "react-dom";
+import {
+    ApolloClient,
+    InMemoryCache,
+    ApolloProvider,
+    useQuery,
+    gql
+} from "@apollo/client";
+
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+
+const client = new ApolloClient({
+    uri: "https://48p1r2roz4.sse.codesandbox.io",
+    cache: new InMemoryCache()
+});
+
+function ExchangeRates() {
+    const {loading, error, data} = useQuery(gql`
+    {
+      rates(currency: "USD") {
+        currency
+        rate
+      }
+    }
+  `);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error :(</p>;
+
+    // @ts-ignore
+    return data.rates.map(({currency, rate}) => (
+        <div key={currency}>
+            <p>
+                {currency}: {rate}
+            </p>
+        </div>
+    ));
+}
+
+render(
+    <React.StrictMode>
+        <ApolloProvider client={client}>
+            <div>
+                <h2>My first Apollo app 🚀</h2>
+            </div>
+            <ExchangeRates/>
+        </ApolloProvider>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change
