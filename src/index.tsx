@@ -11,6 +11,7 @@ import {
 import * as serviceWorker from './serviceWorker';
 import App from "./App";
 import {BrowserRouter} from "react-router-dom";
+import './assets/main.css'
 
 
 const client = new ApolloClient({

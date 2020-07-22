@@ -25,11 +25,24 @@ const Launches = () => {
     if (error) return <p>Error :(</p>;
 
 
+    return (
+
+        <div className="flex flex-wrap mb-4">
+            {
+                // @ts-ignore
+                data.launchesPast.map(launch => (
+                    // console.log(launch.mission_name)
+                    <LaunchCard launch={launch} key={launch.id}/>
+                ))
+            }
+        </div>
+        // @ts-ignore
+
+    );
+
+
     // @ts-ignore
-    return data.launchesPast.map(launch => (
-        // console.log(launch.mission_name)
-        <LaunchCard launch={launch} key={launch.id}/>
-    ));
+
 
 
     // return (
