@@ -31,7 +31,6 @@ const Launches = () => {
             {
                 // @ts-ignore
                 data.launchesPast.map(launch => (
-                    // console.log(launch.mission_name)
                     <LaunchCard launch={launch} key={launch.id}/>
                 ))
             }

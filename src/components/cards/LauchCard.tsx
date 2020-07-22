@@ -4,7 +4,6 @@ import truncateString from "../../util/TruncateString";
 
 // @ts-ignore
 const LaunchCard = ({launch}) => {
-    console.log(launch);
     return (
         <div className="w-full sm:w-1/2 lg:w-1/4 flex mb-4 px-2">
             <div className="flex-1 rounded bg-white shadow-lg">
