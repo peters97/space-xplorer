@@ -7,8 +7,8 @@ import Launches from "../pages/Launches";
 const Main = () => {
     return (
         <Switch>
-            <Route exact path={process.env.PUBLIC_URL + '/'} component={Home}/>
-            <Route exact path={process.env.PUBLIC_URL + '/launches'} component={Launches}/>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/launches" component={Launches}/>
         </Switch>
     );
 }
