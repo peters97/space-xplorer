@@ -6,8 +6,6 @@ import {
     ApolloClient,
     InMemoryCache,
     ApolloProvider,
-    useQuery,
-    gql
 } from "@apollo/client";
 
 import * as serviceWorker from './serviceWorker';
@@ -16,7 +14,7 @@ import {BrowserRouter} from "react-router-dom";
 
 
 const client = new ApolloClient({
-    uri: "https://48p1r2roz4.sse.codesandbox.io",
+    uri: "https://api.spacex.land/graphql/",
     cache: new InMemoryCache()
 });
 //
