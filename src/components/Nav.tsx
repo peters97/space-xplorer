@@ -14,13 +14,13 @@ const Nav = () => {
 
             <ul className="mt-2 text-gray-700 dark:text-gray-400 ">
 
-                <NavLink to="/" activeClassName="text-blue-600" exact className="mt-3 p-2 hover:text-blue-600 dark-hover:text-blue-300 rounded-lg flex flex-col items-center">
+                <NavLink to={process.env.PUBLIC_URL + '/'} activeClassName="text-blue-600" exact className="mt-3 p-2 hover:text-blue-600 dark-hover:text-blue-300 rounded-lg flex flex-col items-center">
                     <FontAwesomeIcon icon={faHouse}/>
 
                     <span className="text-xs mt-2">Home</span>
                 </NavLink>
 
-                <NavLink to="/launches" activeClassName="text-blue-600" className="mt-3 p-2 hover:text-blue-600 dark-hover:text-blue-300 rounded-lg flex flex-col items-center">
+                <NavLink to={process.env.PUBLIC_URL + '/launches'} activeClassName="text-blue-600" className="mt-3 p-2 hover:text-blue-600 dark-hover:text-blue-300 rounded-lg flex flex-col items-center">
                     <FontAwesomeIcon icon={faRocket}/>
 
                     <span className="text-xs mt-2">Launches</span>
